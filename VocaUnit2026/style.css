@@ -1,0 +1,130 @@
+/* Custom CSS for VocaUnit Landing Page */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    /* サイバーグリッド背景 */
+    .cyber-grid {
+        background-size: 50px 50px;
+        background-image: 
+            linear-gradient(to right, var(--color-primary-dark, rgba(34, 211, 238, 0.1)) 1px, transparent 1px),
+            linear-gradient(to bottom, var(--color-primary-dark, rgba(34, 211, 238, 0.1)) 1px, transparent 1px);
+        transform: perspective(500px) rotateX(60deg) translateY(-100px) translateZ(-200px);
+        animation: grid-move 20s linear infinite;
+    }
+
+    /* グリッチエフェクト */
+    .glitch {
+        position: relative;
+    }
+    
+    .glitch::before,
+    .glitch::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+    }
+    
+    .glitch::before {
+        left: 3px;
+        text-shadow: -2px 0 var(--color-secondary, #d946ef);
+        clip: rect(44px, 450px, 56px, 0);
+        animation: glitch-anim 5s infinite linear alternate-reverse;
+    }
+    
+    .glitch::after {
+        left: -3px;
+        text-shadow: -2px 0 var(--color-primary, #22d3ee);
+        clip: rect(44px, 450px, 56px, 0);
+        animation: glitch-anim2 5s infinite linear alternate-reverse;
+    }
+
+    /* グローリングエフェクトボタン */
+    .glow-button {
+        box-shadow: 0 0 10px var(--color-secondary, rgba(217, 70, 239, 0.5));
+    }
+    
+    .glow-button:hover {
+        box-shadow: 0 0 20px var(--color-secondary, rgba(217, 70, 239, 0.8)), 
+                    inset 0 0 10px var(--color-secondary, rgba(217, 70, 239, 0.5));
+    }
+}
+
+/* スムーススクロール */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+
+/* カスタムスクロールバー */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a16;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #06b6d4;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #22d3ee;
+}
+
+/* グリッチアニメーションキーフレーム */
+@keyframes glitch-anim {
+    0% { clip: rect(10px, 9999px, 86px, 0); transform: skew(0.7deg); }
+    5% { clip: rect(61px, 9999px, 8px, 0); transform: skew(0.4deg); }
+    10% { clip: rect(40px, 9999px, 7px, 0); transform: skew(0.1deg); }
+    15% { clip: rect(4px, 9999px, 78px, 0); transform: skew(0.1deg); }
+    20% { clip: rect(31px, 9999px, 60px, 0); transform: skew(0.4deg); }
+    25% { clip: rect(78px, 9999px, 41px, 0); transform: skew(0.9deg); }
+    30% { clip: rect(4px, 9999px, 54px, 0); transform: skew(0.8deg); }
+    35% { clip: rect(70px, 9999px, 43px, 0); transform: skew(0.5deg); }
+    40% { clip: rect(43px, 9999px, 63px, 0); transform: skew(0.2deg); }
+    45% { clip: rect(32px, 9999px, 86px, 0); transform: skew(0.2deg); }
+    50% { clip: rect(93px, 9999px, 88px, 0); transform: skew(0.4deg); }
+    55% { clip: rect(45px, 9999px, 63px, 0); transform: skew(0.4deg); }
+    60% { clip: rect(9px, 9999px, 49px, 0); transform: skew(0.9deg); }
+    65% { clip: rect(37px, 9999px, 48px, 0); transform: skew(0.5deg); }
+    70% { clip: rect(81px, 9999px, 34px, 0); transform: skew(0.7deg); }
+    75% { clip: rect(2px, 9999px, 47px, 0); transform: skew(0.8deg); }
+    80% { clip: rect(68px, 9999px, 12px, 0); transform: skew(0.6deg); }
+    85% { clip: rect(59px, 9999px, 16px, 0); transform: skew(0.6deg); }
+    90% { clip: rect(71px, 9999px, 5px, 0); transform: skew(0.4deg); }
+    95% { clip: rect(10px, 9999px, 61px, 0); transform: skew(0.3deg); }
+    100% { clip: rect(63px, 9999px, 19px, 0); transform: skew(0.8deg); }
+}
+
+@keyframes glitch-anim2 {
+    0% { clip: rect(34px, 9999px, 9px, 0); transform: skew(0.2deg); }
+    5% { clip: rect(29px, 9999px, 67px, 0); transform: skew(0.4deg); }
+    10% { clip: rect(51px, 9999px, 20px, 0); transform: skew(0.9deg); }
+    15% { clip: rect(2px, 9999px, 42px, 0); transform: skew(0.8deg); }
+    20% { clip: rect(97px, 9999px, 60px, 0); transform: skew(0.7deg); }
+    25% { clip: rect(15px, 9999px, 46px, 0); transform: skew(0.5deg); }
+    30% { clip: rect(76px, 9999px, 11px, 0); transform: skew(0.1deg); }
+    35% { clip: rect(50px, 9999px, 65px, 0); transform: skew(0.5deg); }
+    40% { clip: rect(71px, 9999px, 44px, 0); transform: skew(0.4deg); }
+    45% { clip: rect(11px, 9999px, 90px, 0); transform: skew(0.4deg); }
+    50% { clip: rect(4px, 9999px, 73px, 0); transform: skew(0.3deg); }
+    55% { clip: rect(80px, 9999px, 40px, 0); transform: skew(0.2deg); }
+    60% { clip: rect(29px, 9999px, 91px, 0); transform: skew(0.3deg); }
+    65% { clip: rect(9px, 9999px, 56px, 0); transform: skew(0.6deg); }
+    70% { clip: rect(34px, 9999px, 32px, 0); transform: skew(0.6deg); }
+    75% { clip: rect(38px, 9999px, 52px, 0); transform: skew(0.2deg); }
+    80% { clip: rect(22px, 9999px, 86px, 0); transform: skew(0.9deg); }
+    85% { clip: rect(81px, 9999px, 76px, 0); transform: skew(0.3deg); }
+    90% { clip: rect(17px, 9999px, 100px, 0); transform: skew(0.1deg); }
+    95% { clip: rect(40px, 9999px, 5px, 0); transform: skew(0.7deg); }
+    100% { clip: rect(95px, 9999px, 20px, 0); transform: skew(0.4deg); }
+}
