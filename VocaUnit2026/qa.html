@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,9 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+JP:wght@400;700;900&display=swap"
+        rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -34,30 +37,35 @@
         }
     </script>
 </head>
+
 <body class="bg-dark text-white font-body overflow-x-hidden selection:bg-cyan-500 selection:text-dark">
     <!-- 背景エフェクト -->
     <div class="fixed inset-0 z-[-1] cyber-grid"></div>
 
     <!-- ナビゲーション -->
-    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-dark/80 border-b border-cyan-500/30">
+    <nav
+        class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-dark/80 border-b border-cyan-500/30">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex justify-between items-center h-16">
-                <a href="index.html" class="text-2xl font-cyber font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-magenta-500 tracking-wider">ボカユニット</a>
-                
+                <a href="index.html"
+                    class="text-2xl font-cyber font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-magenta-500 tracking-wider">ボカユニット</a>
+
                 <!-- デスクトップメニュー -->
                 <div class="hidden md:flex space-x-8 font-cyber text-sm items-center">
                     <a href="index.html#concept" class="hover:text-cyan-400 transition-colors">CONCEPT</a>
-                    <a href="index.html#rules" class="hover:text-cyan-400 transition-colors">RULES</a>
+                    <a href="index.html#recruit" class="hover:text-cyan-400 transition-colors">RECRUIT</a>
                     <a href="discord.html" class="hover:text-cyan-400 transition-colors">DISCORD</a>
                     <a href="qa.html" class="hover:text-cyan-400 transition-colors">Q&A</a>
-                    <a href="index.html#entry" class="text-magenta-500 hover:text-cyan-400 transition-all font-bold border border-magenta-500/50 px-4 py-1.5 rounded glow-button">ENTRY</a>
+                    <a href="index.html#entry"
+                        class="text-magenta-500 hover:text-cyan-400 transition-all font-bold border border-magenta-500/50 px-4 py-1.5 rounded glow-button">ENTRY</a>
                 </div>
 
                 <!-- モバイルメニューボタン -->
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-btn" class="text-cyan-400 hover:text-white focus:outline-none">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
                     </button>
                 </div>
@@ -66,13 +74,18 @@
     </nav>
 
     <!-- モバイルメニュードロップダウン -->
-    <div id="mobile-menu" class="hidden md:hidden fixed w-full bg-dark/95 backdrop-blur-md border-b border-cyan-500/30 z-40 top-16 left-0">
+    <div id="mobile-menu"
+        class="hidden md:hidden fixed w-full bg-dark/95 backdrop-blur-md border-b border-cyan-500/30 z-40 top-16 left-0">
         <div class="px-4 py-6 space-y-4 font-cyber text-center flex flex-col">
-            <a href="index.html#concept" class="mobile-link text-lg text-white hover:text-cyan-400 transition-colors">CONCEPT</a>
-            <a href="discord.html" class="mobile-link text-lg text-white hover:text-cyan-400 transition-colors">DISCORD</a>
-            <a href="index.html#rules" class="mobile-link text-lg text-white hover:text-cyan-400 transition-colors">RULES</a>
+            <a href="index.html#concept"
+                class="mobile-link text-lg text-white hover:text-cyan-400 transition-colors">CONCEPT</a>
+            <a href="discord.html"
+                class="mobile-link text-lg text-white hover:text-cyan-400 transition-colors">DISCORD</a>
+            <a href="index.html#rules"
+                class="mobile-link text-lg text-white hover:text-cyan-400 transition-colors">RULES</a>
             <a href="qa.html" class="mobile-link text-lg text-white hover:text-cyan-400 transition-colors">Q&A</a>
-            <a href="index.html#entry" class="mobile-link text-lg text-magenta-500 hover:text-cyan-400 transition-all font-bold mt-4 inline-block border border-magenta-500/50 py-2 rounded glow-button">ENTRY</a>
+            <a href="index.html#entry"
+                class="mobile-link text-lg text-magenta-500 hover:text-cyan-400 transition-all font-bold mt-4 inline-block border border-magenta-500/50 py-2 rounded glow-button">ENTRY</a>
         </div>
     </div>
 
@@ -91,11 +104,13 @@
     <!-- Q&Aセクション -->
     <section class="py-16 relative">
         <div class="max-w-3xl mx-auto px-4 relative z-10 space-y-6">
-            
+
             <!-- Question  -->
-            <div class="bg-panel/80 backdrop-blur border border-cyan-900/60 p-6 md:p-8 rounded-xl shadow-lg hover:border-cyan-500/50 transition-colors duration-300">
+            <div
+                class="bg-panel/80 backdrop-blur border border-cyan-900/60 p-6 md:p-8 rounded-xl shadow-lg hover:border-cyan-500/50 transition-colors duration-300">
                 <h3 class="text-lg md:text-xl font-bold mb-4 flex items-start text-white">
-                    <span class="text-cyan-400 font-cyber text-2xl mr-4 leading-none inline-block drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">Q.</span>
+                    <span
+                        class="text-cyan-400 font-cyber text-2xl mr-4 leading-none inline-block drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">Q.</span>
                     <span>1人（ソロ）での参加は可能ですか？</span>
                 </h3>
                 <div class="pl-10 text-gray-300 border-l-2 border-magenta-500/50 py-1 space-y-2">
@@ -109,9 +124,11 @@
             </div>
 
             <!-- Question  -->
-            <div class="bg-panel/80 backdrop-blur border border-cyan-900/60 p-6 md:p-8 rounded-xl shadow-lg hover:border-cyan-500/50 transition-colors duration-300">
+            <div
+                class="bg-panel/80 backdrop-blur border border-cyan-900/60 p-6 md:p-8 rounded-xl shadow-lg hover:border-cyan-500/50 transition-colors duration-300">
                 <h3 class="text-lg md:text-xl font-bold mb-4 flex items-start text-white">
-                    <span class="text-cyan-400 font-cyber text-2xl mr-4 leading-none inline-block drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">Q.</span>
+                    <span
+                        class="text-cyan-400 font-cyber text-2xl mr-4 leading-none inline-block drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">Q.</span>
                     <span>担当分野のかぶり（作曲担当が2名いるなど）はOKですか？</span>
                 </h3>
                 <div class="pl-10 text-gray-300 border-l-2 border-magenta-500/50 py-1 space-y-2">
@@ -122,9 +139,11 @@
             </div>
 
             <!-- Question  -->
-            <div class="bg-panel/80 backdrop-blur border border-cyan-900/60 p-6 md:p-8 rounded-xl shadow-lg hover:border-cyan-500/50 transition-colors duration-300">
+            <div
+                class="bg-panel/80 backdrop-blur border border-cyan-900/60 p-6 md:p-8 rounded-xl shadow-lg hover:border-cyan-500/50 transition-colors duration-300">
                 <h3 class="text-lg md:text-xl font-bold mb-4 flex items-start text-white">
-                    <span class="text-cyan-400 font-cyber text-2xl mr-4 leading-none inline-block drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">Q.</span>
+                    <span
+                        class="text-cyan-400 font-cyber text-2xl mr-4 leading-none inline-block drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">Q.</span>
                     <span>他の投稿祭とのタグ併用（同時参加）は可能ですか？</span>
                 </h3>
                 <div class="pl-10 text-gray-300 border-l-2 border-magenta-500/50 py-1 space-y-2">
@@ -136,9 +155,11 @@
             </div>
 
             <!-- Question  -->
-            <div class="bg-panel/80 backdrop-blur border border-cyan-900/60 p-6 md:p-8 rounded-xl shadow-lg hover:border-cyan-500/50 transition-colors duration-300">
+            <div
+                class="bg-panel/80 backdrop-blur border border-cyan-900/60 p-6 md:p-8 rounded-xl shadow-lg hover:border-cyan-500/50 transition-colors duration-300">
                 <h3 class="text-lg md:text-xl font-bold mb-4 flex items-start text-white">
-                    <span class="text-cyan-400 font-cyber text-2xl mr-4 leading-none inline-block drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">Q.</span>
+                    <span
+                        class="text-cyan-400 font-cyber text-2xl mr-4 leading-none inline-block drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">Q.</span>
                     <span>事前の参加連絡やエントリーは必要ですか？</span>
                 </h3>
                 <div class="pl-10 text-gray-300 border-l-2 border-magenta-500/50 py-1 space-y-2">
@@ -150,9 +171,11 @@
             </div>
 
             <!-- Question  -->
-            <div class="bg-panel/80 backdrop-blur border border-cyan-900/60 p-6 md:p-8 rounded-xl shadow-lg hover:border-cyan-500/50 transition-colors duration-300">
+            <div
+                class="bg-panel/80 backdrop-blur border border-cyan-900/60 p-6 md:p-8 rounded-xl shadow-lg hover:border-cyan-500/50 transition-colors duration-300">
                 <h3 class="text-lg md:text-xl font-bold mb-4 flex items-start text-white">
-                    <span class="text-cyan-400 font-cyber text-2xl mr-4 leading-none inline-block drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">Q.</span>
+                    <span
+                        class="text-cyan-400 font-cyber text-2xl mr-4 leading-none inline-block drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">Q.</span>
                     <span>投稿した作品はどのように紹介されますか？</span>
                 </h3>
                 <div class="pl-10 text-gray-300 border-l-2 border-magenta-500/50 py-1 space-y-2">
@@ -164,23 +187,32 @@
             </div>
 
             <div class="mt-12 text-center">
-                 <a href="index.html" class="inline-flex items-center text-cyan-400 hover:text-white transition-colors font-bold font-cyber">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                <a href="index.html"
+                    class="inline-flex items-center text-cyan-400 hover:text-white transition-colors font-bold font-cyber">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
                     BACK TO HOME
                 </a>
             </div>
-            
+
         </div>
     </section>
 
     <!-- フッター -->
     <footer class="bg-black border-t border-cyan-900 py-12 relative overflow-hidden mt-12">
-        <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50"></div>
+        <div
+            class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50">
+        </div>
         <div class="max-w-6xl mx-auto px-4 text-center z-10 relative">
             <div class="flex justify-center space-x-8 mb-10">
                 <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors">
                     <span class="sr-only">X (Twitter)</span>
-                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.008 5.925H5.022z" /></svg>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.008 5.925H5.022z" />
+                    </svg>
                 </a>
                 <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors font-bold text-sm">CONTACT</a>
             </div>
@@ -193,4 +225,5 @@
     <!-- Scripts -->
     <script src="main.js"></script>
 </body>
+
 </html>
