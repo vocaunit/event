@@ -111,8 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         if(glitchText) {
-            glitchText.setAttribute('data-text', `VOCA UNIT - ${theme.name}`);
-            glitchText.textContent = `VOCA UNIT`;
+            glitchText.setAttribute('data-text', `ボカユニット - ${theme.name}`);
+            glitchText.textContent = `ボカユニット`;
         }
     }
 
@@ -132,8 +132,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         if(glitchText) {
-            glitchText.setAttribute('data-text', `VOCA UNIT`);
-            glitchText.textContent = `VOCA UNIT`;
+            glitchText.setAttribute('data-text', `ボカユニット`);
+            glitchText.textContent = `ボカユニット`;
         }
     }
 
@@ -209,4 +209,126 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('コピーに失敗しました。お手数ですが手動でコピーしてください。');
         });
     };
+
+    // ====== 本日の3本 (Today's 3 Videos) ======
+    const videoGrid = document.getElementById('video-grid');
+    if (videoGrid) {
+        // TODO: Googleスプレッドシートの「ウェブに公開」→「カンマ区切り形式 (CSV)」のURLをここに入力してください。
+        // 現在はダミーの空文字セットアップです。
+        const SPREADSHEET_CSV_URL = '';
+
+        if (!SPREADSHEET_CSV_URL) {
+            videoGrid.innerHTML = `
+                <div class="text-center col-span-3 text-cyan-500 py-10 font-cyber">
+                    <!-- SPREADSHEET_CSV_URL is not configured -->
+                    STAY TUNED...
+                </div>
+            `;
+        } else {
+            fetchVideosFromCSV(SPREADSHEET_CSV_URL);
+        }
+    }
+
+    async function fetchVideosFromCSV(url) {
+        try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error('Network response was not ok');
+            const csvText = await response.text();
+            
+            // 簡易的なCSVパース（1行目はヘッダー想定）
+            const rows = csvText.split('\n').map(row => row.trim()).filter(row => row.length > 0);
+            if (rows.length <= 1) throw new Error('No data found');
+            
+            const dataRows = rows.slice(1);
+            const selectedVideos = pickRandomVideos(dataRows, 3);
+            renderVideos(selectedVideos);
+        } catch (error) {
+            console.error('Error fetching videos:', error);
+            const errorMsg = document.getElementById('youtube-api-error');
+            if(errorMsg) errorMsg.classList.remove('hidden');
+            videoGrid.innerHTML = '';
+        }
+    }
+
+    function pickRandomVideos(allRows, count) {
+        // localStorage から履歴を取得
+        let seenData = JSON.parse(localStorage.getItem('vocaunit_seen_videos') || '[]');
+        const allIds = allRows.map((_, i) => i.toString());
+        let unseenIds = allIds.filter(id => !seenData.includes(id));
+        
+        // 未表示の動画が指定数未満なら、履歴をリセットして一巡させる
+        if (unseenIds.length < count) {
+            seenData = []; // リセット
+            unseenIds = allIds.filter(id => !seenData.includes(id));
+        }
+        
+        let pickedRows = [];
+        let pickedIds = [];
+        
+        // もし全体件数が count 未満の場合への対応
+        const pickCount = Math.min(count, unseenIds.length);
+        
+        for (let i = 0; i < pickCount; i++) {
+            const rIndex = Math.floor(Math.random() * unseenIds.length);
+            const selectedId = unseenIds.splice(rIndex, 1)[0];
+            pickedIds.push(selectedId);
+            pickedRows.push(allRows[parseInt(selectedId)]);
+        }
+        
+        // 履歴を保存
+        localStorage.setItem('vocaunit_seen_videos', JSON.stringify([...seenData, ...pickedIds]));
+        
+        return pickedRows;
+    }
+
+    function renderVideos(videoRows) {
+        if(!videoGrid) return;
+        videoGrid.innerHTML = '';
+        
+        videoRows.forEach(row => {
+            // 簡易カンマ分割
+            const cols = row.split(',');
+            // 汎用的に URL らしきものを探す
+            const urlCol = cols.find(c => c.includes('http'));
+            // もし配列長が3以上ならコラム2をタイトルと仮定
+            const titleCol = cols.length > 2 ? cols[2] : (cols[1] || 'No Title');
+            
+            const displayUrl = urlCol ? urlCol.replace(/"/g, '').trim() : '#';
+            const displayTitle = titleCol ? titleCol.replace(/"/g, '').trim() : 'Video';
+            
+            // YouTubeの場合のサムネイル取得
+            let thumbnailUrl = '';
+            let isYT = false;
+            if (displayUrl.includes('youtube.com/watch') || displayUrl.includes('youtu.be/')) {
+                isYT = true;
+                const ytMatch = displayUrl.match(/(?:v=|youtu\.be\/)([^&]+)/);
+                if (ytMatch && ytMatch[1]) {
+                    thumbnailUrl = `https://img.youtube.com/vi/${ytMatch[1]}/hqdefault.jpg`;
+                }
+            }
+            
+            const thumbHtml = isYT && thumbnailUrl 
+                ? `<img src="${thumbnailUrl}" alt="${displayTitle}" class="w-full h-48 object-cover rounded-t-lg opacity-80 group-hover:opacity-100 transition-opacity">`
+                : `<div class="w-full h-48 bg-dark flex items-center justify-center rounded-t-lg border-b border-cyan-900/50">
+                     <span class="text-cyan-500 font-cyber font-bold tracking-widest text-sm">VIDEO LINK</span>
+                   </div>`;
+
+            const card = document.createElement('a');
+            card.href = displayUrl;
+            card.target = '_blank';
+            card.rel = 'noopener noreferrer';
+            card.className = 'group bg-panel/80 backdrop-blur border border-cyan-900/60 rounded-lg hover:border-cyan-400/80 hover:shadow-[0_0_20px_rgba(34,211,238,0.3)] transition-all overflow-hidden flex flex-col h-full hover:-translate-y-1 block';
+            card.innerHTML = `
+                ${thumbHtml}
+                <div class="p-5 flex-grow flex flex-col justify-between">
+                    <h4 class="font-bold text-gray-200 group-hover:text-white line-clamp-2 mb-3 leading-snug">${displayTitle}</h4>
+                    <div class="flex items-center text-cyan-400 text-sm font-cyber mt-auto group-hover:text-cyan-300">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        WATCH
+                    </div>
+                </div>
+            `;
+            videoGrid.appendChild(card);
+        });
+    }
 });

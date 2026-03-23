@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VocaUnit - ボカロ祭典</title>
+    <title>ボカユニット2026</title>
     <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Custom CSS -->
@@ -43,13 +43,13 @@
     <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-dark/80 border-b border-cyan-500/30">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex justify-between items-center h-16">
-                <a href="#" class="text-2xl font-cyber font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-magenta-500 tracking-wider">VOCA UNIT</a>
+                <a href="#" class="text-2xl font-cyber font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-magenta-500 tracking-wider">ボカユニット</a>
                 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8 font-cyber text-sm items-center">
                     <a href="#concept" class="hover:text-cyan-400 transition-colors">CONCEPT</a>
-                    <a href="#schedule" class="hover:text-cyan-400 transition-colors">SCHEDULE</a>
-                    <a href="#rules" class="hover:text-cyan-400 transition-colors">RULES</a>
+                    <a href="#recruit" class="hover:text-cyan-400 transition-colors">RECRUIT</a>
+                    <a href="discord.html" class="hover:text-cyan-400 transition-colors">DISCORD</a>
                     <a href="qa.html" class="hover:text-cyan-400 transition-colors">Q&A</a>
                     <a href="#entry" class="text-magenta-500 hover:text-cyan-400 transition-all font-bold border border-magenta-500/50 px-4 py-1.5 rounded glow-button">ENTRY</a>
                 </div>
@@ -70,8 +70,8 @@
     <div id="mobile-menu" class="hidden md:hidden fixed w-full bg-dark/95 backdrop-blur-md border-b border-cyan-500/30 z-40 top-16 left-0">
         <div class="px-4 py-6 space-y-4 font-cyber text-center flex flex-col">
             <a href="#concept" class="mobile-link text-lg text-white hover:text-cyan-400 transition-colors">CONCEPT</a>
-            <a href="#schedule" class="mobile-link text-lg text-white hover:text-cyan-400 transition-colors">SCHEDULE</a>
-            <a href="#rules" class="mobile-link text-lg text-white hover:text-cyan-400 transition-colors">RULES</a>
+            <a href="discord.html" class="mobile-link text-lg text-white hover:text-cyan-400 transition-colors">DISCORD</a>
+            <a href="#recruit" class="mobile-link text-lg text-white hover:text-cyan-400 transition-colors">RECRUIT</a>
             <a href="qa.html" class="mobile-link text-lg text-white hover:text-cyan-400 transition-colors">Q&A</a>
             <a href="#entry" class="mobile-link text-lg text-magenta-500 hover:text-cyan-400 transition-all font-bold mt-4 inline-block border border-magenta-500/50 py-2 rounded glow-button">ENTRY</a>
         </div>
@@ -87,11 +87,11 @@
         
         <div class="z-10 text-center px-4 max-w-4xl">
             <h1 class="font-cyber text-6xl md:text-8xl font-black mb-6 tracking-tighter">
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-magenta-500 glitch" data-text="VOCA UNIT">VOCA UNIT</span>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-magenta-500 glitch" data-text="ボカユニット">ボカユニット</span>
             </h1>
-            <p class="text-lg md:text-2xl mb-8 font-bold tracking-widest text-cyan-100 drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">
+            <!-- <p class="text-lg md:text-2xl mb-8 font-bold tracking-widest text-cyan-100 drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">
                 音と光が交差する、新たな創造のステージ
-            </p>
+            </p> -->
             <div class="inline-block border border-cyan-400/50 bg-cyan-900/20 backdrop-blur-sm px-6 py-3 rounded text-cyan-300 font-cyber mb-10 shadow-[0_0_15px_rgba(34,211,238,0.2)]">
                 2026.04.01 - 2026.05.31
             </div>
@@ -114,127 +114,93 @@
             </h2>
             <div class="bg-panel/60 backdrop-blur-md border border-cyan-900/60 p-8 md:p-12 rounded-2xl shadow-2xl relative overflow-hidden group hover:border-cyan-500/50 transition-colors duration-500">
                 <div class="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-cyan-500 to-magenta-500"></div>
-                <h3 class="text-2xl md:text-3xl font-bold mb-8 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">一人では辿り着けない場所へ。</h3>
-                <div class="space-y-6 text-gray-300 leading-wider">
-                    <p>
-                        ボカロP、絵師、動画師、歌い手。<br>
-                        それぞれの才能が共鳴し、ユニットとして一つになる。<br>
-                        「VocaUnit」は、異なる分野のクリエイターが集い、最高の一作を作り上げるための祭典です。
+                <div class="space-y-8 text-gray-300 leading-wider text-center flex flex-col items-center">
+                    <div>
+                        <p class="text-xl md:text-2xl font-bold mb-2 leading-[1.8]">
+                            本イベントは、<br>
+                            <span class="inline-block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">クリエイター同士がユニットを組んで</span><br>
+                            <span class="inline-block"><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">作品を作り上げる</span>投稿祭です。</span>
+                        </p>
+                    </div>
+                    <div class="w-16 h-1 bg-cyan-900/50 rounded-full"></div>
+                    <p class="text-lg md:text-xl leading-[1.8]">
+                        <span class="inline-block">単なる作品投稿にとどまらず、</span><br>
+                        <span class="inline-block"><span class="text-cyan-300 font-bold">誰かと共に制作する「楽しさ」</span>を</span><br>
+                        <span class="inline-block">共有できる場を目指しています。</span>
                     </p>
-                    <p>
-                        コラボレーションから生まれる化学反応が、新たな熱狂を創り出す。<br>
-                        あなたの才能を、仲間と共に響かせよう。
-                    </p>
+                    <div class="pt-4">
+                        <p class="text-lg font-bold text-white tracking-widest bg-cyan-900/30 inline-block px-8 py-3 rounded-full border border-cyan-500/30 shadow-[0_0_15px_rgba(34,211,238,0.1)] hover:bg-cyan-800/40 hover:border-cyan-400/50 transition-all duration-300">
+                            ぜひ気軽にご参加ください！
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Schedule Section -->
-    <section id="schedule" class="py-24 relative bg-cyan-950/10 border-t border-dashed border-cyan-900/50">
-        <div class="max-w-4xl mx-auto px-4 relative z-10">
-            <h2 class="text-3xl md:text-4xl font-cyber font-bold mb-16 text-center flex flex-col items-center">
-                <span class="text-magenta-500 text-sm tracking-widest mb-2 pb-1 border-b border-magenta-500/50">TIMELINE</span>
-                <span>SCHEDULE</span>
-            </h2>
-            
-            <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-cyan-500 before:via-magenta-500 before:to-transparent">
-                
-                <!-- Schedule Item 1 -->
-                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-dark bg-cyan-500 shadow-[0_0_15px_rgba(34,211,238,0.8)] text-dark font-bold font-cyber shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 transition-transform hover:scale-110">1</div>
-                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-panel/80 backdrop-blur p-6 rounded-xl border border-cyan-900/50 hover:border-cyan-400/60 transition-colors shadow-lg">
-                        <div class="text-cyan-400 font-cyber mb-2 tracking-wider">2026.04.01 - 04.30</div>
-                        <h4 class="text-xl font-bold mb-3">エントリー＆ユニット結成期間</h4>
-                        <p class="text-sm text-gray-400 leading-relaxed">参加登録を行い、SNSや専用掲示板でメンバーを募集・結成します。</p>
-                    </div>
-                </div>
-                
-                <!-- Schedule Item 2 -->
-                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-dark bg-gray-700 text-white font-bold font-cyber shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 group-hover:bg-cyan-400 group-hover:text-dark transition-all hover:scale-110">2</div>
-                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-panel/80 backdrop-blur p-6 rounded-xl border border-cyan-900/50 hover:border-cyan-400/60 transition-colors shadow-lg">
-                        <div class="text-cyan-400 font-cyber mb-2 tracking-wider">2026.05.01 - 05.30</div>
-                        <h4 class="text-xl font-bold mb-3">制作期間</h4>
-                        <p class="text-sm text-gray-400 leading-relaxed">結成したユニットで楽曲・イラスト・動画などの一斉制作に入ります。</p>
-                    </div>
-                </div>
 
-                <!-- Schedule Item 3 -->
-                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-dark bg-gray-700 text-white font-bold font-cyber shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 group-hover:bg-magenta-500 group-hover:text-white group-hover:shadow-[0_0_15px_rgba(217,70,239,0.8)] transition-all hover:scale-110">3</div>
-                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-panel/80 backdrop-blur p-6 rounded-xl border border-cyan-900/50 hover:border-magenta-500/60 transition-colors shadow-lg">
-                        <div class="text-magenta-400 font-cyber mb-2 tracking-wider">2026.05.31 20:00</div>
-                        <h4 class="text-xl font-bold mb-3">一斉投稿解禁</h4>
-                        <p class="text-sm text-gray-400 leading-relaxed">指定のタグ「#VocaUnit2026」をつけてニコニコ動画、YouTubeへ一斉公開。</p>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-
-    <!-- Rules Section -->
-    <section id="rules" class="py-24 relative border-t border-dashed border-cyan-900/50">
+    <!-- Recruit Section -->
+    <section id="recruit" class="py-24 relative border-t border-dashed border-cyan-900/50">
         <div class="max-w-4xl mx-auto px-4 relative z-10">
             <h2 class="text-3xl md:text-4xl font-cyber font-bold mb-12 text-center flex flex-col items-center">
-                <span class="text-cyan-400 text-sm tracking-widest mb-2 pb-1 border-b border-cyan-500/50">GUIDELINES</span>
-                <span>RULES</span>
+                <span class="text-cyan-400 text-sm tracking-widest mb-2 pb-1 border-b border-cyan-500/50">COLLABORATION</span>
+                <span>RECRUIT</span>
             </h2>
-            <div class="grid md:grid-cols-2 gap-8 relative">
-                <!-- 参加資格 -->
-                <div class="bg-gradient-to-b from-panel to-dark border border-cyan-900/60 p-8 rounded-xl hover:-translate-y-2 hover:shadow-[0_10px_30px_-10px_rgba(34,211,238,0.3)] transition-all duration-300">
-                    <h3 class="text-xl font-bold mb-6 flex items-center text-cyan-300">
+            <div class="max-w-2xl mx-auto relative">
+                <!-- コラボ募集について -->
+                <div class="bg-gradient-to-b from-panel to-dark border border-cyan-900/60 p-8 md:p-12 rounded-xl text-center hover:-translate-y-2 hover:shadow-[0_10px_30px_-10px_rgba(34,211,238,0.3)] transition-all duration-300">
+                    <h3 class="text-xl md:text-2xl font-bold mb-8 flex justify-center items-center text-cyan-300">
                         <span class="inline-block w-2 h-6 bg-cyan-500 mr-3 shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
-                        参加資格
+                        🎧 コラボ募集について
+                        <span class="inline-block w-2 h-6 bg-cyan-500 ml-3 shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
                     </h3>
-                    <ul class="space-y-4 text-gray-300">
-                        <li class="flex items-start">
-                            <span class="text-cyan-500 mr-2 mt-1">▶</span>
-                            <span>2名以上のユニットであること</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-cyan-500 mr-2 mt-1">▶</span>
-                            <span>担当分野（楽曲、絵、動画など）が分担されていること</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-cyan-500 mr-2 mt-1">▶</span>
-                            <span>プロ・アマ問わず参加可能</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- 作品規定 -->
-                <div class="bg-gradient-to-b from-panel to-dark border border-cyan-900/60 p-8 rounded-xl hover:-translate-y-2 hover:shadow-[0_10px_30px_-10px_rgba(217,70,239,0.3)] transition-all duration-300">
-                    <h3 class="text-xl font-bold mb-6 flex items-center text-magenta-300">
-                        <span class="inline-block w-2 h-6 bg-magenta-500 mr-3 shadow-[0_0_8px_rgba(217,70,239,0.8)]"></span>
-                        作品規定
-                    </h3>
-                    <ul class="space-y-4 text-gray-300">
-                        <li class="flex items-start">
-                            <span class="text-magenta-500 mr-2 mt-1">▶</span>
-                            <span>ニコニコ動画、もしくはYouTubeへの投稿</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-magenta-500 mr-2 mt-1">▶</span>
-                            <span>未公開のオリジナル作品であること</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-magenta-500 mr-2 mt-1">▶</span>
-                            <span>動画内に指定の公式ロゴを使用すること</span>
-                        </li>
-                    </ul>
+                    <div class="space-y-6 text-gray-300 leading-relaxed">
+                        <p class="text-lg">
+                            ボカユニット2026では<br>
+                            <span class="text-cyan-400 font-bold">歌唱 / 作曲 / 作詞 / 絵 / 動画 / MIX / 演奏</span> など<br>
+                            どの役割でも参加可能です。
+                        </p>
+                        <div class="w-16 h-px bg-cyan-900/50 mx-auto"></div>
+                        <p class="text-lg">
+                            Xで募集する場合は<br>
+                            <span class="text-magenta-400 font-bold text-3xl inline-block my-3">#ボカユニット募集</span><br>
+                            タグをご利用ください。
+                        </p>
+                        <p class="text-base text-cyan-100 font-bold pt-4">
+                            素敵なユニットが生まれることを楽しみにしています！
+                        </p>
+                    </div>
                 </div>
             </div>
             
-            <div class="mt-14 text-center">
-                <a href="#" class="inline-flex items-center text-cyan-400 hover:text-dark border-2 border-cyan-500 hover:bg-cyan-400 font-bold px-8 py-4 rounded-lg transition-all shadow-[0_0_15px_rgba(34,211,238,0.2)] hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] font-cyber">
-                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                    DOWNLOAD LOGO KIT
-                </a>
+        </div>
+    </section>
+
+    <!-- Today's 3 Videos Section
+    （開催期間中、コメントアウトを外すとスプレッドシート連動のランダム動画3本が表示されます）
+    <section id="todays-videos" class="py-24 relative bg-dark border-t border-dashed border-cyan-900/50">
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+            <h2 class="text-3xl md:text-4xl font-cyber font-bold mb-12 text-center flex flex-col items-center">
+                <span class="text-cyan-400 text-sm tracking-widest mb-2 pb-1 border-b border-cyan-500/50">PICKUP</span>
+                <span>TODAY'S 3 VIDEOS</span>
+            </h2>
+            <p class="text-center text-gray-400 mb-10">
+                本日の投稿作品ピックアップ。毎日動画を紹介します！（※一巡するまで重複しません）<br>
+                （※後日、HPで紹介するためのフォームを作成・公開予定です）
+            </p>
+            
+            <div id="video-grid" class="grid md:grid-cols-3 gap-8">
+                <div class="text-center col-span-3 text-cyan-500 py-10 animate-pulse font-cyber">
+                    LOADING DATA...
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center hidden" id="youtube-api-error">
+                <p class="text-red-400 text-sm">動画データの取得に失敗しました。時間をおいて再度お試しください。</p>
             </div>
         </div>
     </section>
+    -->
 
     <!-- Entry Section -->
     <section id="entry" class="py-24 relative bg-cyan-950/20 border-t border-dashed border-cyan-900/50">
@@ -248,7 +214,8 @@
                 <h3 class="text-2xl font-bold mb-6 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">参加方法はハッシュタグをつけるだけ！</h3>
                 <p class="text-gray-300 mb-8 leading-relaxed">
                     事前のエントリーや面倒な登録フォームでの申請は一切不要です。<br>
-                    作品投稿時に、以下の専用ハッシュタグをつけて各プラットフォーム（ニコニコ動画・YouTube等）へ投稿してください。
+                    ① ユニットで作品を制作<br>
+                    ② 投稿時に以下の専用ハッシュタグをつけて各プラットフォームへ投稿
                 </p>
                 
                 <div class="inline-block bg-cyan-950/40 border border-cyan-500/50 rounded-lg p-4 md:p-6 mb-8 cursor-pointer hover:bg-cyan-900/40 transition-colors group relative max-w-full" onclick="copyHashtag()">
@@ -269,7 +236,7 @@
     <footer class="bg-black border-t border-cyan-900 py-12 relative overflow-hidden">
         <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50"></div>
         <div class="max-w-6xl mx-auto px-4 text-center z-10 relative">
-            <h2 class="text-3xl font-cyber font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-magenta-500 tracking-wider mb-8">VOCA UNIT</h2>
+            <h2 class="text-3xl font-cyber font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-magenta-500 tracking-wider mb-8">ボカユニット</h2>
             <div class="flex justify-center space-x-8 mb-10">
                 <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors">
                     <span class="sr-only">X (Twitter)</span>
@@ -278,7 +245,7 @@
                 <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors font-bold text-sm">CONTACT</a>
             </div>
             <p class="text-gray-600 text-sm font-cyber tracking-widest">
-                &copy; 2026 VocaUnit Project. All rights reserved.
+                &copy; 2026 ボカユニット Project. All rights reserved.
             </p>
         </div>
     </footer>
