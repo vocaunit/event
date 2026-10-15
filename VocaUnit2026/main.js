@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // グローバルスコープからHTMLのonclickで呼び出せるように定義
     window.copyHashtag = function() {
-        const textToCopy = '#VocaUnit2026';
+        const textToCopy = '#ボカユニット2026';
         
         // クリップボードAPIを使用してコピー
         navigator.clipboard.writeText(textToCopy).then(() => {
